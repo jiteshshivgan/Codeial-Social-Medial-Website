@@ -4,6 +4,18 @@ const app=express();
 const port =8000;
 //When we deploy to live server, it would be port number 80.
 
+
+//use express router
+
+app.use('/', require('./routes/index'));
+
+
+
+
+
+
+
+
 app.listen(port, function(err){
     if(err){
         console.log('Error in running the server: ', err);
