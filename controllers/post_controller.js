@@ -1,3 +1,3 @@
 module.exports.post=function(req, res){
-    return res.end('<h1>Rahul</h1>');
+    return res.end('<h1>Post some content</h1>');
 }
