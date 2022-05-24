@@ -1,5 +1,10 @@
 //I need to export a function which is publically available to my routes file
 module.exports.home=function(req, res){
-    return res.end('<h1>Express is up for codial</h1>');
+    //res.render('html.ejs file you want to render', {
+    //     data you want to send with it
+    // })
+    return res.render('home', {
+        title: "Home"
+    });
 }
 //module.exports.actionName=function(req, res){};

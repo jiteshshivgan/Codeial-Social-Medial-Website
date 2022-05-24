@@ -5,12 +5,31 @@ const path=require('path');
 const port =8000;
 const app=express();
 //When we deploy to live server, it would be port number 80.
+const expressLayouts = require('express-ejs-layouts');
+// All the views which are going to be rendered using routes belong to same layouts. 
 
 
+app.use(express.static('./assets'));
+
+// Tell the app where to look out for assets file.
+
+app.use(expressLayouts);
 //use express router
+
+//extract style and scripts from sub pages into the layout
+app.set('layout extractStyles', true);
+app.set('layout extractScripts', true);
+
+
+
+
 app.use(express.urlencoded());
 // app.user('/') yeh path bta rha jo user search karega.
 app.use('/',require('./routes'));
+
+//set ejs as our new engine
+app.set('view engine', 'ejs');
+app.set('views', './views');
 
 
 
