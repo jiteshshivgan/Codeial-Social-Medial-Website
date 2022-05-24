@@ -7,7 +7,8 @@ const app=express();
 //When we deploy to live server, it would be port number 80.
 const expressLayouts = require('express-ejs-layouts');
 // All the views which are going to be rendered using routes belong to same layouts. 
-
+const db=require('./config/mongoose');
+//while requiring our mongoose file this will go and run mongoose.js file.
 
 app.use(express.static('./assets'));
 
