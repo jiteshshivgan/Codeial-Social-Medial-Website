@@ -4,7 +4,7 @@ module.exports.home=function(req, res){
     //     data you want to send with it
     // })
     return res.render('home', {
-        title: "Home"
+        title: "Home Page"
     });
 }
 //module.exports.actionName=function(req, res){};

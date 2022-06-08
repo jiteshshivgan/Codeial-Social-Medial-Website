@@ -1,0 +1,23 @@
+#page-header {
+  height: 40px;
+  background-color: #1286F8;
+  width: 100vw;
+  border: 1px solid black; }
+  #page-header ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100%;
+    width: 95%;
+    align-items: center;
+    border: 1px solid black;
+    margin: 0px; }
+    #page-header ul div {
+      display: flex;
+      color: white; }
+      #page-header ul div li {
+        list-style: none; }
+        #page-header ul div li a {
+          font-weight: bolder;
+          color: white;
+          text-decoration: none; }
