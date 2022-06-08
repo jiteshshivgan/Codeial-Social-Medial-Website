@@ -3,6 +3,7 @@ const router=express.Router();
 const passport=require('passport');
 
 const usersController = require('../controllers/users_controller'); 
+const postController = require('../controllers/post_controller');
 
 router.get('/profile',passport.checkAuthentication, usersController.profile);
 
@@ -21,5 +22,5 @@ router.post('/create-session', passport.authenticate(
 ),usersController.createSession);
 
 router.get('/sign-out', usersController.destroySession);
-
+router.post('/post', postController.post);
 module.exports=router;

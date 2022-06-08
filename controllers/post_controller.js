@@ -1,3 +1,6 @@
-module.exports.post=function(req, res){
-    return res.end('<h1>Post some content</h1>');
+const POST=require('../models/post');
+module.exports.post= function(req, res){
+    console.log(req.body);
+    POST.findById()
+    return res.redirect('/');
 }
