@@ -6,10 +6,26 @@
 
 <section id="feed-post">
     <h4>Posts</h4>
-    <form action="/users/post" id="new-post-form" method="POST">
+    <form action="/posts/create" id="new-post-form" method="POST">
         <!-- We need the content field -->
         <textarea name="content" cols="30" rows="3" placeholder="Type here..."></textarea>
         <input type="submit" value="Post">
     </form>
-
+    <div id="posts-list-container">
+        <ul>
+        <%for(i of posts){%>
+        <li>
+            <p>
+                <%=i.content%> 
+                <br>
+                <small>
+                <%=i.user.name%>
+                </small>
+            </p>
+        </li>
+        <%}%>
+    </ul>
+    </div>  
 </section>
+
+    
