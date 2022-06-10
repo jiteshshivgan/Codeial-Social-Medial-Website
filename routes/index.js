@@ -15,6 +15,7 @@ route.get('/', homeController.home);
 //Any request comes to / with users appended to it will be transfered to users.js
 route.use('/users',require('./users'));
 route.use('/posts', require('./posts'));
+route.use('/comments', require('./comments'));
 
 //route.use('/routerName', require('routerFile'));
 

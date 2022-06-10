@@ -9,7 +9,17 @@ const postSchema = new mongoose.Schema({
         //link it to user
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
-    }
+    },
+    //include the id's of all the comments in this post schema itself
+    comments: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Comment'
+        }
+
+    ]
+
+    
 },{
         //timestamp create two new columns created at, updated at
         timestamps: true 
