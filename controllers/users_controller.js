@@ -5,12 +5,34 @@ const User=require('../models/user');
 //let say we have a profile page
 //export action
 module.exports.profile=function(req,res){
-    return res.render('users', {
-        title: 'Profile'
-    });
+    User.findById(req.params.id, function(err, user){
+        return res.render('users', {
+            title: 'User Profile',
+            profile_user: user
+        }); 
+    })
+    
 };
 //Now this action is ready to be access by router and this router is ready to be accessed by browser.
 //This controller will fetch the view and send it to the browser
+
+module.exports.update=function(req,res){
+    if(req.user.id==req.params.id){
+        User.findByIdAndUpdate(req.params.id, {
+            name: req.body.name,
+            email: req.body.email
+        }, function(err, user){
+            return res.redirect('back');
+        });
+    }else{
+        return res.status(401).send('Unauthorized');
+    }
+}
+
+
+
+
+
 
 //add some more actions
 //render the sign up page

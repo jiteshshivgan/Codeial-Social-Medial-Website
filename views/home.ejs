@@ -1,8 +1,10 @@
 
     <!-- Above is the sytax for including the header and footer file. -->
-<h1>
-    Codeial /<%=title%>
-</h1>
+<link rel="stylesheet" href="/css/home.css">
+
+
+<div id="home-container">
+
 
 <section id="feed-post">
     <h4>Posts</h4>
@@ -23,3 +25,13 @@
 </section>
 
     
+<section id="user-friends">
+    <h4>Friends</h4>
+    <% for(u of all_users){%>
+        <p>
+            <a href="/users/profile/<%=u.id%>"><%=u.name%></a>
+        </p>
+    <%}%>
+</section>
+
+</div>

@@ -11,7 +11,7 @@
         <% if (locals.user) {%>
         <div>   
             <li>
-                <a href="/users/profile">User: <%=user.name%> &emsp;</a>
+                <a href="/users/profile/<%=user.id%>">User: <%=user.name%> &emsp;</a>
             </li>
             <li>
                 <a href="/users/sign-out">Sign out</a>
